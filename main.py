@@ -1,5 +1,5 @@
 from config import get_db_config
-from db_setup import create_database_if_not_exists, create_tables
+from db_create import create_database_if_not_exists, create_tables
 from db_fill import fill_db
 from db_manager import DBManager
 
