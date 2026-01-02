@@ -7,16 +7,20 @@ load_dotenv()
 
 @dataclass(frozen=True)
 class DBConfig:
-    host: str = os.getenv("DB_HOST")
-    port: str = os.getenv("DB_PORT")
-    username: str = os.getenv("DB_USERNAME")
-    password: str = os.getenv("DB_PASSWORD")
+    host: str
+    port: str
+    dbname: str
+    username: str
+    password: str
+
+
 
 def get_db_config() -> DBConfig:
     return DBConfig(
         host=os.getenv("DB_HOST"),
         port=os.getenv("DB_PORT"),
         dbname=os.getenv("DB_NAME", "hh_project"),
-        user=os.getenv("DB_USER", "postgres_admin"),
-        password=os.getenv("DB_PASSWORD", "!QAZxsw2")
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
     )
+
