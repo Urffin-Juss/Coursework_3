@@ -1,7 +1,7 @@
 import time
 import requests
 
-BASE_URL = "http://api.hh.com"
+BASE_URL = "http://api.hh.ru"
 
 class HHClient:
     def __init__(self, sleep: float = 0.2, user_agent: str = "hh-parsier/1.0"):
@@ -11,7 +11,7 @@ class HHClient:
 
     def get_employer(self, employer_id: int) -> dict:
         url = f"{BASE_URL}/employer/{employer_id}"
-        r = requests.get(url, headers=self.handler, timeout=20)
+        r = requests.get(f"{BASE_URL}/employers/{employer_id}", timeout=20)
         r.raise_for_status()
         time.sleep(self.sleep)
         return r.json()
@@ -31,7 +31,7 @@ class HHClient:
             }
 
             url = f"{BASE_URL}/vacancies"
-            r = requests.get(url, params=params, headers=self.headers, timeout=20)
+            r = requests.get(f"{BASE_URL}/employers/{employer_id}", timeout=20)
             r.raise_for_status()
             data = r.json()
             items = data.get("items", [])
