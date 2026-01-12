@@ -10,7 +10,7 @@ class DBConfig:
     host: str
     port: str
     dbname: str
-    username: str
+    user: str
     password: str
 
 
@@ -20,7 +20,7 @@ def get_db_config() -> DBConfig:
         host=os.getenv("DB_HOST"),
         port=os.getenv("DB_PORT"),
         dbname=os.getenv("DB_NAME", "hh_project"),
-        username=os.getenv("DB_USER"),
+        user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASSWORD")
     )
 
