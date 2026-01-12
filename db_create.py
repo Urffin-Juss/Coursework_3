@@ -1,3 +1,5 @@
+import os
+os.environ["PGCLIENTENCODING"] = "UTF8"
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from config import DBConfig

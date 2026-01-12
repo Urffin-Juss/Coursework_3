@@ -4,6 +4,7 @@ from db_fill import fill_db
 from db_manager import DBManager
 
 
+
 def format_salary(s_from, s_to, cur):
     if s_from is None and s_to is None:
         return "не указана"
@@ -32,6 +33,14 @@ def main():
     ]
 
     print("1) Создаю БД/таблицы...")
+    cfg = get_db_config()
+
+    print("host:", repr(cfg.host))
+    print("port:", repr(cfg.port))
+    print("dbname:", repr(cfg.dbname))
+    print("user:", repr(cfg.user))
+    print("password:", repr(cfg.password))
+
     create_database_if_not_exists(cfg)
     create_tables(cfg)
 

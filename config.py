@@ -1,4 +1,5 @@
 import os
+os.environ["PGCLIENTENCODING"] = "UTF8"
 from dataclasses import dataclass
 from dotenv import load_dotenv
 
