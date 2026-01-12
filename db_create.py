@@ -16,7 +16,7 @@ def create_database_if_not_exists(cfg: DBConfig) -> None:
         cur.execute("SELECT 1 FROM pg_database WHERE datname=%s;", (cfg.dbname,))
         exists = cur.fetchone() is not None
         if not exists:
-            cur.execute(f'CREATE DATABASE "{cfg.dbname}";')f
+            cur.execute(f'CREATE DATABASE "{cfg.dbname}";')
     conn.close()
 
 

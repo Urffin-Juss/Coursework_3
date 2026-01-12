@@ -17,10 +17,11 @@ class DBConfig:
 
 def get_db_config() -> DBConfig:
     return DBConfig(
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT"),
-        dbname=os.getenv("DB_NAME", "hh_project"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD")
+        host=os.getenv("DB_HOST").strip(),
+        port=os.getenv("DB_PORT").strip(),
+        port=os.getenv("DB_PORT").strip(),
+        dbname=os.getenv("DB_NAME").strip(),
+        user=os.getenv("DB_USER").strip(),
+        password=os.getenv("DB_PASSWORD").strip(),
     )
 
