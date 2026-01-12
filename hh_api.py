@@ -16,7 +16,7 @@ class HHClient:
         time.sleep(self.sleep)
         return r.json()
 
-    def get_vacancy_by_employer(self, employer_id: int, per_page: int = 100, max_pages: int = 20) -> list[dict]:
+    def get_vacancies_by_employer(self, employer_id: int, per_page: int = 100, max_pages: int = 20) -> list[dict]:
 
         all_items: list[dict] = []
         page = 0
