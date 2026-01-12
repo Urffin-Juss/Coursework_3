@@ -19,7 +19,6 @@ def get_db_config() -> DBConfig:
     return DBConfig(
         host=os.getenv("DB_HOST").strip(),
         port=os.getenv("DB_PORT").strip(),
-        port=os.getenv("DB_PORT").strip(),
         dbname=os.getenv("DB_NAME").strip(),
         user=os.getenv("DB_USER").strip(),
         password=os.getenv("DB_PASSWORD").strip(),
